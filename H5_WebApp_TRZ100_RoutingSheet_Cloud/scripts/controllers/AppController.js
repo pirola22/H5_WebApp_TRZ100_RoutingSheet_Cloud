@@ -1315,6 +1315,7 @@ var h5;
                 console.log("location.port");
                 console.log(location.port);
                 this.scope.routing.transactionStatus.LstIONCON = true;
+                port = "1510";
                 this.appService.getIONURL(transaction, port).then(function (val) {
                     var data = val.items[0];
                     var URL = data.F3A230 + data.F3A330 + data.F3A130;
@@ -1373,7 +1374,9 @@ var h5;
                         console.log(xml);
                         var base_url = "https://ion-truex-t.tac.com:7443/infor/";
                         var trans = "CustomerApi/streamserv/sendXML";
-                        var url = base_url + trans;
+                        var url = "https://mingle-ionapi.inforcloudsuite.com/TEKNORAPEXCOMPAN_TST/CustomerApi/streamserv/sendXML";
+                        connectionString = url;
+                        console.log("CLOUD TEST");
                         var req = {
                             method: 'POST',
                             url: connectionString,

@@ -1741,6 +1741,10 @@ module h5.application {
             console.log(location.port);
             this.scope.routing.transactionStatus.LstIONCON = true;
 
+            //// hard codded for cloud testing bBEGIN
+            port = "1510";
+            // hard codded for cloud testing END
+            
             this.appService.getIONURL(transaction, port).then((val: any) => {
 
                 let data = val.items[0];
@@ -1833,12 +1837,14 @@ module h5.application {
 
                     console.log(xml);
 
-
+                    // hard codded for cloud testing BEGIN
                     var base_url = "https://ion-truex-t.tac.com:7443/infor/"
                     var trans = "CustomerApi/streamserv/sendXML";
-                    var url = base_url + trans;
+                    var url = "https://mingle-ionapi.inforcloudsuite.com/TEKNORAPEXCOMPAN_TST/CustomerApi/streamserv/sendXML";
+                    connectionString = url;
+                    // hard codded for cloud testing END
                     //var bearerToken = "";
-                    
+                    console.log("CLOUD TEST");
                     var req = {
                         method: 'POST',
                         url: connectionString,
