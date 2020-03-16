@@ -1244,9 +1244,11 @@ var h5;
                     _this.scope.routing.transactionStatus.getPrintFile = false;
                     _this.refreshTransactionStatus();
                 }, function (err) {
+                    console.log(_this.scope.routing.printerSetup.printers.selected);
+                    console.log(_this.scope.userContext);
                     _this.scope.routing.printerSetup.printers.selected = _this.scope.routing.printerSetup.printers[0];
                     _this.appService.addPrintFile(user, "").then(function (val) {
-                        console.log("PrintFile Updated");
+                        console.log("PrintFile Updated  " + _this.scope.routing.printerSetup.printers.selected);
                         _this.scope.routing.transactionStatus.addPrintFile = false;
                         _this.getDefaultPrinter();
                     }, function (err) {
@@ -1308,6 +1310,10 @@ var h5;
                 var connectionString = "";
                 var transaction = "sendXML";
                 var port = location.port;
+                console.log("location");
+                console.log(location);
+                console.log("location.port");
+                console.log(location.port);
                 this.scope.routing.transactionStatus.LstIONCON = true;
                 this.appService.getIONURL(transaction, port).then(function (val) {
                     var data = val.items[0];

@@ -225,9 +225,9 @@ module h5.application {
                 MEDC:"*PRT",
                 SEQN: 1,
                 
-                DEV1: printer
+                DEV: printer
             };
-            return this.restService.executeM3MIRestService("MNS205MI", "Upd", requestData).then((val: M3.IMIResponse) => { return val; });
+            return this.restService.executeM3MIRestService("MNS205MI", "UpdPrtMedia", requestData).then((val: M3.IMIResponse) => { return val; });
         }
         
         public addPrintFile(user: string, printer: string): ng.IPromise<M3.IMIResponse> {
@@ -237,9 +237,9 @@ module h5.application {
                 MEDC:"*PRT",
 
                 
-                DEV1: printer
+                DEV: printer
             };
-            return this.restService.executeM3MIRestService("MNS205MI", "Add", requestData).then((val: M3.IMIResponse) => { return val; });
+            return this.restService.executeM3MIRestService("MNS205MI", "AddPrtMedia", requestData).then((val: M3.IMIResponse) => { return val; });
         }
         
         

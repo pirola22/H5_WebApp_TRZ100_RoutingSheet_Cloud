@@ -163,18 +163,18 @@ var h5;
                     USID: user,
                     MEDC: "*PRT",
                     SEQN: 1,
-                    DEV1: printer
+                    DEV: printer
                 };
-                return this.restService.executeM3MIRestService("MNS205MI", "Upd", requestData).then(function (val) { return val; });
+                return this.restService.executeM3MIRestService("MNS205MI", "UpdPrtMedia", requestData).then(function (val) { return val; });
             };
             AppService.prototype.addPrintFile = function (user, printer) {
                 var requestData = {
                     PRTF: "ROUTINGPF",
                     USID: user,
                     MEDC: "*PRT",
-                    DEV1: printer
+                    DEV: printer
                 };
-                return this.restService.executeM3MIRestService("MNS205MI", "Add", requestData).then(function (val) { return val; });
+                return this.restService.executeM3MIRestService("MNS205MI", "AddPrtMedia", requestData).then(function (val) { return val; });
             };
             AppService.prototype.getPrintFile = function (user) {
                 var requestData = {

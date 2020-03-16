@@ -1658,10 +1658,12 @@ module h5.application {
                 this.refreshTransactionStatus();
             }, (err: any) => {
                 //do nothing
+                 console.log(this.scope.routing.printerSetup.printers.selected);
+                 console.log(this.scope.userContext);
                 this.scope.routing.printerSetup.printers.selected = this.scope.routing.printerSetup.printers[0];
                 this.appService.addPrintFile(user, "").then((val: any) => {
 
-                    console.log("PrintFile Updated")
+                    console.log("PrintFile Updated  " + this.scope.routing.printerSetup.printers.selected)
                     this.scope.routing.transactionStatus.addPrintFile = false;
                     this.getDefaultPrinter();
 
@@ -1733,8 +1735,10 @@ module h5.application {
             let connectionString = "";
             let transaction = "sendXML"
             let port = location.port; //if dev, make sure port is in ion con manager
-            
-            
+            console.log("location");
+            console.log(location);
+            console.log("location.port");
+            console.log(location.port);
             this.scope.routing.transactionStatus.LstIONCON = true;
 
             this.appService.getIONURL(transaction, port).then((val: any) => {
